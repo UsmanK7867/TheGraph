@@ -1,0 +1,30 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: CRUDContractGraph
+    network: mumbai
+    source:
+      address: "0xc97128E19e68cEA1C6B9EfC377D411CD5978c8Ea"
+      abi: CRUDContractGraph
+      startBlock: 41705340
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ItemCreated
+        - ItemDeleted
+        - ItemUpdated
+      abis:
+        - name: CRUDContractGraph
+          file: CRUDContractGraph\abis\CRUDContractGraph.json
+      eventHandlers:
+        - event: ItemCreated(uint256,string)
+          handler: handleItemCreated
+        - event: ItemDeleted(uint256,string)
+          handler: handleItemDeleted
+        - event: ItemUpdated(uint256,string)
+          handler: handleItemUpdated
+      file: CRUDContractGraph\CRUDContractGraph.wasm
