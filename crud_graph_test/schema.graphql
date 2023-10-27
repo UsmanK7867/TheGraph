@@ -1,0 +1,26 @@
+type ItemCreated @entity(immutable: true) {
+  id: Bytes!
+  CRUDContractGraph_id: BigInt! # uint256
+  name: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ItemDeleted @entity(immutable: true) {
+  id: Bytes!
+  CRUDContractGraph_id: BigInt! # uint256
+  name: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ItemUpdated @entity(immutable: true) {
+  id: Bytes!
+  CRUDContractGraph_id: BigInt! # uint256
+  name: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
